@@ -11,10 +11,10 @@ from youtube_transcript_api import YouTubeTranscriptApi
 import google.generativeai as genai
 import json
 
-YOUTUBE_API_KEY = os.getenv('youtube')# Replace with your youtube api key
-CHANNEL_ID = os.getenv('channel_id')# Replace with your youtube channel id to convert into blog
-GEMINI_API_KEY = os.getenv('gemini')  # Replace with your Gemini API key
-MEDIUM_INTEGRATION_TOKEN = os.getenv('medium')# Replace with your medium integration token
+YOUTUBE_API_KEY = os.getenv('YOUTUBE')# Replace with your youtube api key
+CHANNEL_ID = os.getenv('CHANNEL_ID')# Replace with your youtube channel id to convert into blog
+GEMINI_API_KEY = os.getenv('GEMINI')  # Replace with your Gemini API key
+MEDIUM_INTEGRATION_TOKEN = os.getenv('MEDIUM')# Replace with your medium integration token
 
 # Initialize YouTube API client
 youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
@@ -28,20 +28,6 @@ conn = sqlite3.connect(DB_FILE)
 c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS published_videos (video_id TEXT PRIMARY KEY)''')
 conn.commit()
-def get_channel_id(username):
-    # Call the YouTube API to search for the channel by username
-    request = youtube.channels().list(
-        part="id",
-        forUsername=username
-    )
-    response = request.execute()
-
-    # Extract the channel ID from the response
-    if 'items' in response and len(response['items']) > 0:
-        return response['items'][0]['id']
-    else:
-        return None
-CHANNEL_ID=get_channel_id("@DaveNickDaily")
 
 def get_medium_user_id(integration_token):
     url = "https://api.medium.com/v1/me"

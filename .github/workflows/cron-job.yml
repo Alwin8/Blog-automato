@@ -2,7 +2,7 @@ name: Run Python Script
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # This cro n expression runs the job at midnight UTC every day
+    - cron: '0 0 * * *'  # Th is cro n expression runs the job at midnight UTC every day
   push:
     branches:
       - Original  # Run on push to the main branch

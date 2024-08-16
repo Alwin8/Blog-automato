@@ -15,7 +15,8 @@ YOUTUBE_API_KEY = os.getenv('YOUTUBE')# Replace with your youtube api key
 CHANNEL_ID = os.getenv('CHANNEL_ID')# Replace with your youtube channel id to convert into blog
 GEMINI_API_KEY = os.getenv('GEMINI')  # Replace with your Gemini API key
 MEDIUM_INTEGRATION_TOKEN = os.getenv('MEDIUM')# Replace with your medium integration token
-print(YOUTUBE_API_KEY)
+if not YOUTUBE_API_KEY:
+    raise ValueError("YouTube API key is not set. Please ensure it's set in the environment vari")
 # Initialize YouTube API client
 youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
 

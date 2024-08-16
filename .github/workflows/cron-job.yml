@@ -5,7 +5,7 @@ on:
     - cron: '0 0 * * *'  # This cro n expression runs the job at midnight UTC every day
   push:
     branches:
-      - main  # Run on push to the main branch
+      - original  # Run on push to the main branch
 
 jobs:
   build:

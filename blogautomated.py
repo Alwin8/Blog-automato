@@ -11,7 +11,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 import google.generativeai as genai
 import json
 
-YOUTUBE_API_KEY = os.getenv('YOUTUBE')# Replace with your youtube api key
+YOUTUBE_API_KEY = 'AIzaSyBWogKI1u80ZF6j6eUIjJ2GZSX1F8fjSgk'# Replace with your youtube api key
 CHANNEL_ID = os.getenv('CHANNEL_ID')# Replace with your youtube channel id to convert into blog
 GEMINI_API_KEY = os.getenv('GEMINI')  # Replace with your Gemini API key
 MEDIUM_INTEGRATION_TOKEN = os.getenv('MEDIUM')# Replace with your medium integration token

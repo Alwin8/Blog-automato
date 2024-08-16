@@ -10,11 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      YOUTUBE: ${{ secrets.YOUTUBE }}
-      CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-      GEMINI: ${{ secrets.GEMINI }}
-      MEDIUM: ${{ secrets.MEDIUM }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -29,12 +24,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # Ensure you have a requirements.txt file in your repo
 
-    - name: Debug environment
-      run: |
-        python --version
-        pip --version
-        pip list
-
     - name: Run script
+      env:
+        YOUTUBE: ${{ secrets.YOUTUBE }}
+        CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+        GEMINI: ${{ secrets.GEMINI }}
+        MEDIUM: ${{ secrets.MEDIUM }}
       run: |
         python -u blogautomated.py  # Replace with the path to your Python script

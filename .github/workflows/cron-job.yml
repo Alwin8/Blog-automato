@@ -31,4 +31,4 @@ jobs:
         GEMINI: ${{ secrets.GEMINI }}
         MEDIUM: ${{ secrets.MEDIUM }}
       run: |
-        python -u blogautomated.py  # Replace with the path to your Python script
+        python blogautomated.py  # Replace with the path to your Python script

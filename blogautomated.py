@@ -59,7 +59,7 @@ def get_latest_video(channel_id):
 
 def download_subtitle(video_id):
     try:
-        transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
+        transcript_list = YouTubeTranscriptApi.get_transcript(video_id,proxies={"http":"180.183.157.159:8080"})
         return " ".join([entry['text'] for entry in transcript_list])
     except Exception as e:
         print(f"Failed to download subtitle for video {video_id}: {e}")

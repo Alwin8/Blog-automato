@@ -89,7 +89,7 @@ def publish_to_medium(title, content):
 
     data = {
         'title': title,
-        'contentFormat': 'html',
+        'contentFormat': 'markdown',
         'content': content,
         'tags':tags,
         'publishStatus': 'public'

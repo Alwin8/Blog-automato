@@ -8,7 +8,7 @@ The **YouTube to Medium Blog Converter** is a Python script that automates the p
 ## Running the Script
 1. **Add Api keys**
    
-   You need to configure the script with your API keys and tokens. Edit the script and replace the placeholder values with your actual keys:
+   You need to configure the script with your API keys and tokens. Edit the script and replace the placeholder values with your actual keys in blogautomated.py:
 
    ```bash
    YOUTUBE_API_KEY = 'YOUR_YOUTUBE_API_KEY' # get from google credentials

@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "blogautomato.py",
+      "src": "blogautomated.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "blogautomato.py"
+      "dest": "blogautomated.py"
     }
   ]
 }
